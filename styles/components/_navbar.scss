@@ -1,0 +1,135 @@
+.navbar {
+  width: 100%;
+  background-color: white;
+  color: white;
+  padding: 0 13%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+
+  .logo {
+    width: 30%;
+  }
+  .search-navbar {
+    width: 70%;
+    display: flex;
+
+    .input-search-container {
+      width: 55%;
+      position: relative;
+
+      .input-search {
+        width: 100%;
+        border-radius: 18px;
+        height: 40px;
+        color: #c3cad9;
+        background-color: #F1F1F2;
+      }
+
+      .icon-search-container {
+        position: absolute;
+        right: 3%;
+        top: 16%;
+        //background-color: black;
+        border-left-color: blue;
+        border-left-width: 2px;
+        display: flex;
+        align-items: center;
+
+        .verticalLine {
+          height: 28px;
+          background-color: #C6C6C8;
+          width: 1px;
+          margin-right: 3px;
+        }
+
+        .icon-search {
+          color: #C6C6C8;
+          font-size: 25px;
+        }
+      }
+    }
+
+    .group-button {
+      width: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .button-search {
+        margin-left: 10px;
+
+        .ant-btn {
+          background-color: white;
+          font-weight: 500;
+          border-radius: 5px;
+          height: 38px;
+        }
+      }
+
+      .button-login {
+        margin-left: 8px;
+
+        .ant-btn {
+          background-color: rgba(254, 44, 85, 1);
+          color: white;
+          font-weight: 500;
+          border-radius: 5px;
+          padding: 0 23px;
+          height: 38px;
+        }
+      }
+    }
+  }
+
+  .action-navbar {
+    //width: 42.5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .contact-navbar {
+      display: flex;
+      align-items: center;
+      margin-right: 25px;
+      margin-left: 8px;
+
+      .text-contact {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        color: #505255;
+        margin-right: 10px;
+        color: white;
+      }
+
+      .text-contact:hover {
+        cursor: pointer;
+      }
+    }
+
+    .author-navbar {
+      display: flex;
+
+      .border-icon-user {
+        border: 2px solid white;
+        border-radius: 12px;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+      }
+      .vertical {
+        margin: 0 5px;
+      }
+
+      .text-hover:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
