@@ -1,0 +1,98 @@
+@media only screen and (max-width: 600px) {
+  .modal-register-container {
+    width: 100%;
+
+    .title-login-form {
+
+    }
+
+    .login-container {
+      width: 100%;
+
+      .login-form-item {
+
+        .title {
+        }
+
+        .input_login {
+          width: 100%;
+          height: 40px;
+          border-radius: 12px;
+        }
+      }
+
+      .forgot-password {
+        text-align: right;
+        font-weight: 500;
+        font-size: 15px;
+        color: rgb(254, 44, 85);
+      }
+
+      .horizontal-line {
+        margin: 20px 0 15px 0;
+      }
+
+      .text-login-social {
+        text-align: center;
+
+        span {
+          font-size: 15px;
+        }
+      }
+
+      .group-login-social {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+
+        .item-icon {
+          width: 30px;
+          align-items: center;
+          margin: 0 15px;
+
+          .icon-facebook {
+            font-size: 40px;
+            color: blue;
+          }
+
+          .icon-gmail {
+            font-size: 40px;
+            color: #E3610B;
+          }
+        }
+      }
+
+      .btn-login {
+        height: 46px;
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .bottom-text {
+        .noti {
+
+        }
+
+        .register {
+          color: rgb(254, 44, 85);
+          font-weight: 600;
+          font-size: 14px;
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+
+  .ant-modal-content {
+    border-radius: 10px !important;
+  }
+
+  .ant-modal {
+    max-width: calc(100% - 20px) !important;
+    border-radius: 12px;
+  }
+  .ant-modal-wrap {
+      top: -85px !important;
+  }
+}

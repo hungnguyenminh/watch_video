@@ -1,0 +1,125 @@
+.modal-login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 30px;
+
+
+
+  .title-login-form {
+    color: rgb(22, 24, 35);
+    font-family: "IBM Plex Sans", "SofiaPro", "Arial", "Tahoma", "PingFangSC", "sans-serif";
+    font-size: 32px;
+    margin: 10px auto;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .login-container {
+    .login-form-item {
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        margin-bottom: 3px;
+        font-size: 14px;
+      }
+
+      .input_login {
+        width: 370px;
+        height: 40px;
+        border-radius: 12px;
+      }
+    }
+
+    .forgot-password {
+      text-align: right;
+      font-weight: 500;
+      font-size: 15px;
+      color: rgb(254, 44, 85);
+    }
+
+    .horizontal-line {
+      margin: 20px 0 15px 0;
+    }
+
+    .text-login-social {
+      text-align: center;
+
+      span {
+        font-size: 15px;
+      }
+    }
+
+    .group-login-social {
+      width: 370px;
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+
+      .item-icon {
+        width: 32px;
+        align-items: center;
+        margin: 0 5px;
+
+        .icon-facebook {
+          font-size: 29px;
+          color: blue;
+        }
+
+        .icon-gmail {
+          font-size: 29px;
+          color: #E3610B;
+        }
+      }
+    }
+
+    .btn-login {
+      height: 46px;
+      width: 370px;
+      margin-left: 0;
+      border-radius: 25px;
+      //background-color: rgb(254, 44, 85);
+      background-color: white;
+      border-color: rgb(254, 44, 85);
+      color: rgb(254, 44, 85);
+      font-size: 16px;
+    }
+
+    .bottom-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+      .noti {
+
+      }
+
+      .register {
+        color: rgb(254, 44, 85);
+        font-weight: 600;
+        font-size: 14px;
+        margin-left: 3px;
+      }
+
+      .register:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.ant-modal-content {
+  border-radius: 10px !important;
+}
+
+.ant-modal {
+  max-width: 100% !important;
+  border-radius: 12px;
+}
+
