@@ -241,20 +241,21 @@ export default function Sidebar(): JSX.Element {
   };
   return (
     <div className="sidebar-container">
-      <div style={{width: "270px"}} />
+      <div style={{width: "320px"}} />
       <div className="menu">
-        <div style={{display: "flex"}}>
-          <BlockOutlined style={{fontSize: 22, color: "red", marginRight: 5}} />
-          <h3>Danh mục sản phẩm</h3>
-        </div>
-        <Menu
-          onClick={onClick}
-          style={{width: 256}}
-          defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["sub1"]}
-          mode="inline"
-          items={convertItemSidebar()}
-        />
+        sidebar
+        {/* <div style={{display: "flex"}}> */}
+        {/*  <BlockOutlined style={{fontSize: 22, color: "red", marginRight: 5}} /> */}
+        {/*  <h3>Danh mục sản phẩm</h3> */}
+        {/* </div> */}
+        {/* <Menu */}
+        {/*  onClick={onClick} */}
+        {/*  style={{width: 256}} */}
+        {/*  defaultSelectedKeys={["1"]} */}
+        {/*  defaultOpenKeys={["sub1"]} */}
+        {/*  mode="inline" */}
+        {/*  items={convertItemSidebar()} */}
+        {/* /> */}
       </div>
     </div>
   );
