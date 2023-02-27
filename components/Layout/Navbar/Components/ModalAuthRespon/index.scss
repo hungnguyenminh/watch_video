@@ -1,0 +1,25 @@
+.modal-auth-respon-container {
+  height: 1000px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  background-color: black;
+  margin-top: 29px;
+  color: white;
+  padding: 5px 20px;
+  font-size: 22px;
+
+  .item-action {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+    padding-top: 7px;
+
+    .text {
+      margin-left: 25px;
+      font-size: 17px !important;
+    }
+  }
+}
+

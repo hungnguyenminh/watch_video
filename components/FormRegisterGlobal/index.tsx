@@ -26,11 +26,11 @@ interface UserAccount {
   pass_jwt: string;
 }
 
-interface IModalLogin {
-  ToggleRegisterModal: () => void;
+interface IModalRegister {
+  ToggleRegisterModal?: () => void;
 }
 
-export function ModalLogin(props: IModalLogin): JSX.Element {
+export function FormRegisterGlobal(props: IModalRegister): JSX.Element {
   const {ToggleRegisterModal} = props;
   const dispatch = useDispatch();
   const router = useRouter();
@@ -46,6 +46,9 @@ export function ModalLogin(props: IModalLogin): JSX.Element {
     pass_jwt: "",
   };
 
+  const goToLogin = (): void => {
+    router.push("/login");
+  };
   const login = useMutation(ApiUser.login);
   const handleLogin = (value: UserAccount): void => {
     router.push("/home");
@@ -90,9 +93,9 @@ export function ModalLogin(props: IModalLogin): JSX.Element {
     >
       {({handleSubmit}): JSX.Element => {
         return (
-          <div className="modal-login-container">
+          <div className="modal-register-container">
             <div className="title-login-form">
-              <span>Đăng nhập vào TikTok</span>
+              <span>Đăng kí</span>
             </div>
             <div className="login-container">
               <div className="login-form-item">
@@ -117,31 +120,19 @@ export function ModalLogin(props: IModalLogin): JSX.Element {
                 />
                 <ErrorMessageGlobal name="username" />
               </div>
-              <div className="forgot-password">
-                <span>Forgot password?</span>
-              </div>
-              <hr className="horizontal-line" />
-              <div className="text-login-social">
-                <span>Or User Your Social to Log in</span>
-              </div>
-              <div className="group-login-social">
-                <div className="item-icon">
-                  <FacebookFilled className="icon-facebook" />
-                </div>
-                <div className="item-icon">
-                  <GoogleCircleFilled className="icon-gmail" />
-                </div>
-              </div>
               <ButtonGlobal
                 onClick={handleSubmit}
                 className="btn-login"
-                title="Đăng nhập"
+                title="Đăng ký"
                 loading={login.isLoading}
               />
               <div className="bottom-text">
-                <p className="noti">Bạn không có tài khoản?</p>
-                <p className="register" onClick={ToggleRegisterModal}>
-                  Đăng ký
+                <p className="noti">Bạn muốn đăng nhập?</p>
+                <p
+                  className="register"
+                  onClick={ToggleRegisterModal ?? goToLogin}
+                >
+                  Đăng nhập
                 </p>
               </div>
             </div>

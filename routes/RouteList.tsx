@@ -18,8 +18,20 @@ const routes: IRoute[] = [
     isLanding: true,
   },
   {
+    path: "/register",
+    name: "Đăng nhập",
+    isSidebar: false,
+    isLanding: true,
+  },
+  {
     path: "/manager_permission",
     name: "Quản lý phân quyền",
+    isSidebar: true,
+    isLanding: false,
+  },
+  {
+    path: "/detail_video",
+    name: "Chi tiết bài đăng",
     isSidebar: true,
     isLanding: false,
   },

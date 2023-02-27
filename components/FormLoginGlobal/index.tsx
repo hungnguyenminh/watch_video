@@ -26,11 +26,11 @@ interface UserAccount {
   pass_jwt: string;
 }
 
-interface IModalRegister {
-  ToggleRegisterModal: () => void;
+interface IModalLogin {
+  ToggleRegisterModal?: () => void;
 }
 
-export function ModalRegister(props: IModalRegister): JSX.Element {
+export function FormLoginGlobal(props: IModalLogin): JSX.Element {
   const {ToggleRegisterModal} = props;
   const dispatch = useDispatch();
   const router = useRouter();
@@ -46,9 +46,13 @@ export function ModalRegister(props: IModalRegister): JSX.Element {
     pass_jwt: "",
   };
 
+  const gotoRegister = (): void => {
+    router.push("/register");
+  };
+
   const login = useMutation(ApiUser.login);
   const handleLogin = (value: UserAccount): void => {
-    router.push("/home");
+    router.push("/");
     // login.mutate(
     //   {
     //     username: value.username.trim(),
@@ -90,9 +94,9 @@ export function ModalRegister(props: IModalRegister): JSX.Element {
     >
       {({handleSubmit}): JSX.Element => {
         return (
-          <div className="modal-register-container">
+          <div className="modal-login-container">
             <div className="title-login-form">
-              <span>Đăng kí</span>
+              <span>Đăng nhập vào TikTok</span>
             </div>
             <div className="login-container">
               <div className="login-form-item">
@@ -117,16 +121,34 @@ export function ModalRegister(props: IModalRegister): JSX.Element {
                 />
                 <ErrorMessageGlobal name="username" />
               </div>
+              <div className="forgot-password">
+                <span>Forgot password?</span>
+              </div>
+              <hr className="horizontal-line" />
+              <div className="text-login-social">
+                <span>Or User Your Social to Log in</span>
+              </div>
+              <div className="group-login-social">
+                <div className="item-icon">
+                  <FacebookFilled className="icon-facebook" />
+                </div>
+                <div className="item-icon">
+                  <GoogleCircleFilled className="icon-gmail" />
+                </div>
+              </div>
               <ButtonGlobal
                 onClick={handleSubmit}
                 className="btn-login"
-                title="Đăng ký"
+                title="Đăng nhập"
                 loading={login.isLoading}
               />
               <div className="bottom-text">
-                <p className="noti">Bạn muốn đăng nhập?</p>
-                <p className="register" onClick={ToggleRegisterModal}>
-                  Đăng nhập
+                <p className="noti">Bạn không có tài khoản?</p>
+                <p
+                  className="register"
+                  onClick={ToggleRegisterModal ?? gotoRegister}
+                >
+                  Đăng ký
                 </p>
               </div>
             </div>

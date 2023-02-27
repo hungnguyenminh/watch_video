@@ -32,12 +32,12 @@ function LoadingLayout({children}: LoadingLayoutProps): JSX.Element {
 
   return (
     <div className="loading-layout">
-      {loading && (
-        <div className="loading-layout-content">
-          <Icon icon="Logo_Visang" size={300} className="logo" />
-          <LoadingGlobal size="large" />
-        </div>
-      )}
+      {/* {loading && ( */}
+      {/*  <div className="loading-layout-content"> */}
+      {/*    <Icon icon="Logo_Visang" size={300} className="logo" /> */}
+      {/*    <LoadingGlobal size="large" /> */}
+      {/*  </div> */}
+      {/* )} */}
       {children}
     </div>
   );

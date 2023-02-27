@@ -1,0 +1,96 @@
+@media only screen and (max-width: 600px) {
+  .navbar {
+    padding: 15px 4% !important;
+    background-color: black !important;
+
+    .logo {
+    }
+    .modal-auth {
+      display: block !important;
+    }
+    .search-navbar {
+
+      .input-search-container {
+        display: none;
+        .input-search {
+
+        }
+
+        .icon-search-container {
+
+
+          .verticalLine {
+
+          }
+
+          .icon-search {
+
+          }
+        }
+      }
+
+      .group-button {
+        width: 100% !important;
+        //background-color: gray;
+        .bell-icon {
+          display: none;
+        }
+
+        .upload-icon {
+        }
+        .user-icon {
+        }
+
+        .button-search {
+          display: none;
+          .ant-btn {
+
+          }
+        }
+
+        .button-login {
+          display: none;
+        }
+
+        .icon-responsive {
+          display: flex !important;
+          align-items: center;
+          color: white;
+
+          .icon-search {
+            font-size: 30px;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+
+    .action-navbar {
+
+      .contact-navbar {
+
+
+        .text-contact {
+
+        }
+
+        .text-contact:hover {
+        }
+      }
+
+      .author-navbar {
+
+        .border-icon-user {
+
+        }
+        .vertical {
+        }
+
+        .text-hover:hover {
+
+        }
+      }
+    }
+  }
+
+}

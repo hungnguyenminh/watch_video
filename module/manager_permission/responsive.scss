@@ -1,0 +1,13 @@
+@media only screen and (max-width: 600px) {
+  .home-container {
+    margin-left: 0px;
+
+    .home-list-video {
+      display: none;
+    }
+
+    .home-mobile {
+      display: block !important;
+    }
+  }
+}

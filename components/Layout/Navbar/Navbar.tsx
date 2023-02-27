@@ -1,26 +1,28 @@
 import React, {useState} from "react";
 import {Button, Image, Input, Modal} from "antd";
-import {
-  PhoneOutlined,
-  PlusOutlined,
-  SearchOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import {PlusOutlined, SearchOutlined, UploadOutlined} from "@ant-design/icons";
 import {useRouter} from "next/router";
 import {Icon} from "@app/components/Icon";
 import Config from "@app/config";
-import {ModalLogin} from "@app/components/Layout/Sidebar/Components/ModalLogin";
-import {ModalRegister} from "@app/components/Layout/Sidebar/Components/ModalRegister";
+import "./responsive.scss";
+import ModalAuthRespon from "@app/components/Layout/Navbar/Components/ModalAuthRespon";
+import {FormLoginGlobal} from "@app/components/FormLoginGlobal";
+import {FormRegisterGlobal} from "@app/components/FormRegisterGlobal";
 
 export default function Navbar(): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModal, setIsModal] = useState<string>("login");
+  const [isModalAuth, setIsModalAuth] = useState<boolean>(false);
 
   const router = useRouter();
   const avatar =
     "https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/02/how-to-delete-tiktok-920x515.jpg";
   const toSelfBook = (): void => {
     router.push("/self_book");
+  };
+
+  const ToggleModalAuthRes = (): void => {
+    setIsModalAuth(!isModalAuth);
   };
   const ToggleRegisterModal = (): void => {
     if (isModal === "login") {
@@ -42,6 +44,7 @@ export default function Navbar(): JSX.Element {
 
   const handleCancel = () => {
     setIsModalOpen(false);
+    setIsModal("login");
   };
   return (
     <div className="navbar" style={{height: Config.HEIGHT_NAVBAR}}>
@@ -66,8 +69,11 @@ export default function Navbar(): JSX.Element {
             <SearchOutlined className="icon-search" />
           </div>
         </div>
+
         <div className="group-button">
-          <Icon icon="Bell" size={20} />
+          <div className="bell-icon">
+            <Icon icon="Bell" size={20} />
+          </div>
           <div onClick={toSelfBook} className="button-search">
             <Button icon={<PlusOutlined style={{fontSize: 15}} />}>
               <span>Upload</span>
@@ -76,10 +82,22 @@ export default function Navbar(): JSX.Element {
           <div onClick={goToLoginPage} className="button-login">
             <Button>Log in</Button>
           </div>
-
+          <UploadOutlined style={{fontSize: 15}} className="upload-icon" />
+          <div className="icon-responsive">
+            <SearchOutlined className="icon-search" />
+            <div onClick={ToggleModalAuthRes}>
+              <Icon icon="user-bottom" size={30} />
+            </div>
+          </div>
           {/* <Icon icon="Bell_Noti" size={20} /> */}
         </div>
       </div>
+      {isModalAuth && (
+        <div className="modal-auth">
+          <ModalAuthRespon ToggleModalAuthRes={ToggleModalAuthRes} />
+        </div>
+      )}
+
       <Modal
         open={isModalOpen}
         onOk={handleOk}
@@ -87,9 +105,9 @@ export default function Navbar(): JSX.Element {
         footer={false}
       >
         {isModal === "login" ? (
-          <ModalLogin ToggleRegisterModal={ToggleRegisterModal} />
+          <FormLoginGlobal ToggleRegisterModal={ToggleRegisterModal} />
         ) : (
-          <ModalRegister ToggleRegisterModal={ToggleRegisterModal} />
+          <FormRegisterGlobal ToggleRegisterModal={ToggleRegisterModal} />
         )}
       </Modal>
     </div>

@@ -16,8 +16,10 @@ export default function DashboardLayout({
     <div className="wrapper">
       <Main>
         <Navbar />
-        <div style={{display: "flex", padding: "0 13%", marginTop: "55px"}}>
+        <div className="detail-layout">
           <Sidebar />
+          <div className="w-320" />
+
           <LoadingLayout>
             <Content>{children}</Content>
           </LoadingLayout>
