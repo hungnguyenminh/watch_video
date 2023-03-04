@@ -1,0 +1,28 @@
+.hashtag-section-container {
+  max-width: 320px;
+  margin-top: 30px;
+  width: 100%;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+
+  .menu-name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 16px;
+  }
+
+  .hashtag-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hashtag-section-container {
+    display: none;
+  }
+}
+

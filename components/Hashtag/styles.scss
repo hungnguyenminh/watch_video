@@ -1,0 +1,34 @@
+.hashtag-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+  width: fit-content;
+  padding: 3px 10px;
+  border: 1px solid rgba(22, 24, 35, 0.2);
+  border-radius: 12px;
+  margin: 0px 8px 12px 0px;
+  background: rgb(255, 255, 255);
+  max-width: 100%;
+
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+    cursor: pointer;
+  }
+
+  .hashtag-icon {
+
+  }
+
+  .hashtag-content {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(22, 24, 35, 0.75);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 6px;
+  }
+}

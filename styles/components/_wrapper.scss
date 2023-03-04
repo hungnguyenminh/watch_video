@@ -12,23 +12,15 @@
     position: relative;
     display: flex;
     padding: 0 13%;
-    marginTop: 55px;
     min-height: 100%;
-    .w-320 {
-      width: 320px;
-    }
   }
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 820px) {
   .wrapper {
-
     .detail-layout {
       padding: 0;
-      .w-320 {
-        display: none;
-      }
     }
   }
 }

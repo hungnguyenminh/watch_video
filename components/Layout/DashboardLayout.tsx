@@ -3,7 +3,7 @@ import Navbar from "./Navbar/Navbar";
 import Content from "./Content/Content";
 import Main from "./Main/Main";
 import LoadingLayout from "./LoadingLayout";
-import Sidebar from "@app/components/Layout/Sidebar/Sidebar";
+import HashtagSection from "@app/components/Layout/HashtagSection/HashtagSection";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -17,9 +17,7 @@ export default function DashboardLayout({
       <Main>
         <Navbar />
         <div className="detail-layout">
-          <Sidebar />
-          <div className="w-320" />
-
+          <HashtagSection />
           <LoadingLayout>
             <Content>{children}</Content>
           </LoadingLayout>
