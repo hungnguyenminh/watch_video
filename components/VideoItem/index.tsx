@@ -10,7 +10,12 @@ import "./styles.scss";
 
 function ItemVideo({user, video}: VideoItemTypes) {
   const [isLike, setIsLike] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const router = useRouter();
+
+  const handleAutoPlaying = () => {
+    setIsPlaying(!isPlaying);
+  };
 
   const handleLikeVideo = () => {
     setIsLike(!isLike);
@@ -40,13 +45,25 @@ function ItemVideo({user, video}: VideoItemTypes) {
             <div className="description-text">{video.videoDesc}</div>
             <div className="hashtag-container">
               {video?.hashtags?.map((item, index) => (
-                <b key={item.id}>{item.hashtag}</b>
+                <b
+                  key={item.id}
+                  role="button"
+                  onClick={() => window.open(item.link)}
+                >
+                  {item.hashtag}
+                </b>
               ))}
             </div>
           </div>
           <div className="video-view">
             <div className="video-player">
-              <ReactPlayer url={video.videoUrl} />
+              <ReactPlayer
+                url={video.videoUrl}
+                controls
+                volume={0.5}
+                loop
+                onReady={handleAutoPlaying}
+              />
             </div>
             <div className="action-btn-wrapper">
               <div className="item-icon">

@@ -1,8 +1,7 @@
  .item-video {
       display: flex;
-      border-bottom: 1px solid #d2d2d5 ;
       padding: 0px 0px 20px 0px;
-   margin-bottom: 20px;
+   margin-bottom: 10px;
 
    .user-avatar {
      border-radius: 50px;
@@ -14,6 +13,9 @@
 
       .item-detail {
         margin-left: 13px;
+        border-bottom: 1px solid #d2d2d5 ;
+        padding-bottom: 30px
+      ;
 
         .user-information {
           display: flex;
@@ -54,6 +56,7 @@
 
             .description-text {
               width: fit-content;
+              max-width: 100%;
 
             }
 
