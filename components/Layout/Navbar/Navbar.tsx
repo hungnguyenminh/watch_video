@@ -47,10 +47,7 @@ export default function Navbar(): JSX.Element {
     setIsModal("login");
   };
   return (
-    <div
-      className="navbar"
-      style={{height: Config.HEIGHT_NAVBAR, minWidth: "1600px"}}
-    >
+    <div className="navbar" style={{height: Config.HEIGHT_NAVBAR}}>
       <div onClick={goToHomePage} className="logo">
         <Image
           style={{borderRadius: 50}}

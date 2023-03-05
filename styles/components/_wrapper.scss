@@ -11,7 +11,7 @@
   .detail-layout {
     position: relative;
     display: flex;
-    padding: 0 13%;
+    padding: 0 10%;
     min-height: 100%;
   }
 
@@ -21,6 +21,14 @@
   .wrapper {
     .detail-layout {
       //padding: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    .detail-layout {
+      padding: 0;
     }
   }
 }

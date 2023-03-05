@@ -18,7 +18,7 @@ export function VideoView(): JSX.Element {
       },
       video: {
         videoId: "askdjf",
-        videoUrl: "https://youtu.be/EngW7tLk6R8",
+        videoUrl: "http://techslides.com/demos/sample-videos/small.mp4",
         videoDesc: "Xin chao mung cac ban",
         hashtags: [
           {
