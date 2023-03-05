@@ -14,7 +14,6 @@
 
       .item-detail {
         margin-left: 13px;
-        width: 90%;
 
         .user-information {
           display: flex;
@@ -75,7 +74,7 @@
         .video-view {
           margin-top: 10px;
           display: flex;
-          min-width: 200px;
+          min-width: fit-content;
           .video-player {
             background-color: black;
             height: fit-content;
