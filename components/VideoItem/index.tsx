@@ -10,7 +10,12 @@ import "./styles.scss";
 
 function ItemVideo({user, video}: VideoItemTypes) {
   const [isLike, setIsLike] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const router = useRouter();
+
+  const handleAutoPlaying = () => {
+    setIsPlaying(!isPlaying);
+  };
 
   const handleLikeVideo = () => {
     setIsLike(!isLike);
@@ -36,41 +41,55 @@ function ItemVideo({user, video}: VideoItemTypes) {
           </Button>
         </div>
         <div className="video-description-container">
-          <div className="description-content">
-            <div className="description-text">{video.videoDesc}</div>
-            <div className="hashtag-container">
-              {video?.hashtags?.map((item, index) => (
-                <b key={item.id}>{item.hashtag}</b>
-              ))}
-            </div>
-          </div>
           <div className="video-view">
-            <div className="video-player">
-              <ReactPlayer url={video.videoUrl} />
+            <div className="description-content">
+              <div className="description-text">{video.videoDesc}</div>
+              <div className="hashtag-container">
+                {video?.hashtags?.map((item, index) => (
+                  <b
+                    key={item.id}
+                    role="button"
+                    onClick={() => window.open(item.link)}
+                  >
+                    {item.hashtag}
+                  </b>
+                ))}
+              </div>
             </div>
-            <div className="action-btn-wrapper">
-              <div className="item-icon">
-                <div className="icon" role="button" onClick={handleLikeVideo}>
-                  <HeartFilled
-                    style={{
-                      fontSize: 21,
-                      color: `${isLike ? "#fe2c55" : "#161823"}`,
-                    }}
-                  />
-                </div>
-                <p>{video.reaction?.nOfLike}</p>
+            <div className="video-section">
+              <div className="video-player">
+                <ReactPlayer
+                  url={video.videoUrl}
+                  controls
+                  volume={0.5}
+                  loop
+                  onReady={handleAutoPlaying}
+                />
               </div>
-              <div className="item-icon">
-                <div className="icon">
-                  <MessageFilled style={{fontSize: 21}} />
+              <div className="action-btn-wrapper">
+                <div className="item-icon">
+                  <div className="icon" role="button" onClick={handleLikeVideo}>
+                    <HeartFilled
+                      style={{
+                        fontSize: 21,
+                        color: `${isLike ? "#fe2c55" : "#161823"}`,
+                      }}
+                    />
+                  </div>
+                  <p>{video.reaction?.nOfLike}</p>
                 </div>
-                <p>{video.reaction?.nOfComment}</p>
-              </div>
-              <div className="item-icon">
-                <div className="icon">
-                  <Icon icon="Share_Web" size={21} color="black" />
+                <div className="item-icon">
+                  <div className="icon">
+                    <MessageFilled style={{fontSize: 21}} />
+                  </div>
+                  <p>{video.reaction?.nOfComment}</p>
                 </div>
-                <p>Chia sẻ</p>
+                <div className="item-icon">
+                  <div className="icon">
+                    <Icon icon="Share_Web" size={21} color="black" />
+                  </div>
+                  <p>Chia sẻ</p>
+                </div>
               </div>
             </div>
           </div>

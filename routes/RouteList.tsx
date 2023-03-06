@@ -32,8 +32,8 @@ const routes: IRoute[] = [
   {
     path: "/detail_video",
     name: "Chi tiết bài đăng",
-    isSidebar: true,
-    isLanding: false,
+    isSidebar: false,
+    isLanding: true,
   },
 ];
 
