@@ -60,7 +60,7 @@ export default function Navbar(): JSX.Element {
       <div className="search-navbar">
         <div className="input-search-container">
           <Input
-            placeholder="Tìm Kiếm Sách ..."
+            placeholder="Tìm Kiếm ..."
             className="input-search"
             // addonAfter={<SearchOutlined style={{color: "#C6C6C8"}} />}
           />
