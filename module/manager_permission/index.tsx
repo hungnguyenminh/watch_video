@@ -1,13 +1,11 @@
 import "./index.scss";
 import "./responsive.scss";
-import React, {useState} from "react";
+import React from "react";
 import {VideoItemTypes} from "@app/types/VideoItem/VideoItemTypes";
 import {HomeResponse} from "@app/module/manager_permission/components/HomeResponse";
 import VideoItem from "@app/components/VideoItem";
 
 export function VideoView(): JSX.Element {
-  const [dataFilter, setDataFilter] = useState<object>({});
-
   const dummyData: VideoItemTypes[] = [
     {
       user: {
@@ -18,8 +16,7 @@ export function VideoView(): JSX.Element {
       },
       video: {
         videoId: "askdjf",
-        videoUrl:
-          "https://www.tiktok.com/@datnguyen0701/video/7201549971613617434?is_from_webapp=1&sender_device=pc",
+        videoUrl: "https://youtu.be/DTosuuoN74A",
         videoDesc: "Xin chao mung cac ban",
         hashtags: [
           {
