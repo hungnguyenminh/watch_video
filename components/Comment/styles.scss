@@ -1,0 +1,40 @@
+.comment-item-wrapper {
+  display: flex;
+  max-width: 100%;
+  flex-direction: row;
+  color: #262626;
+  margin-bottom: 15px;
+
+  .user-avatar {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .user-info-comment {
+    box-sizing: border-box;
+    padding: 5px 15px 8px 15px;
+    margin-left: 10px;
+    background: #f0f2f5;
+    border-radius: 10px;
+    .user-comment {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: baseline;
+      .username {
+        font-weight: 500;
+      }
+      .created-time {
+        color: #91959b;
+        margin-left: 5px;
+        font-size: 12px;
+      }
+    }
+    .comment-content {
+      display: flex;
+      max-width: 100%;
+      word-break: break-all;
+    }
+  }
+}

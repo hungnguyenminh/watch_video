@@ -20,7 +20,7 @@ function ItemVideo({user, video}: VideoItemTypes) {
   const handleLikeVideo = () => {
     setIsLike(!isLike);
   };
-  const goToViewDetail = (value: string): void => {
+  const goToViewDetail = (): void => {
     router.push("/detail_video");
   };
   return (
@@ -36,7 +36,10 @@ function ItemVideo({user, video}: VideoItemTypes) {
             <b>{user.accountName}</b>
             <span>{user.fullname}</span>
           </div>
-          <Button className="view-detail-btn" onClick={() => goToViewDetail()}>
+          <Button
+            className="view-detail-btn"
+            onClick={(): void => goToViewDetail()}
+          >
             View Detail
           </Button>
         </div>
