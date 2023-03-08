@@ -1,189 +1,49 @@
 import "./index.scss";
 import React, {useState} from "react";
 import {useRouter} from "next/router";
-import {VideoItemTypes} from "@app/types/VideoItem/VideoItemTypes";
-import VideoItem from "@app/components/VideoItem";
-import ReactPlayer from "react-player";
+import {Image} from "antd";
 
 export function HomeResponse(): JSX.Element {
   const router = useRouter();
-  const dummyData: VideoItemTypes[] = [
-    {
-      user: {
-        avatar:
-          "https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/4/26/photo-1650990843778-1650990844390345942486.jpg",
-        accountName: "Sd_Nguyen",
-        fullname: "Nguyen Van A",
-      },
-      video: {
-        videoId: "askdjf",
-        videoUrl: "http://techslides.com/demos/sample-videos/small.mp4",
-        videoDesc: "Xin chao mung cac ban",
-        hashtags: [
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-        ],
-        reaction: {
-          nOfLike: 200,
-          nOfComment: 200,
-        },
-      },
-    },
-    {
-      user: {
-        avatar:
-          "https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/4/26/photo-1650990843778-1650990844390345942486.jpg",
-        accountName: "Sd_Nguyen",
-        fullname: "Nguyen Van A",
-      },
-      video: {
-        videoId: "askdjf",
-        videoUrl: "https://youtu.be/EngW7tLk6R8",
-        videoDesc: "Xin chao mung cac ban",
-        hashtags: [
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-        ],
-        reaction: {
-          nOfLike: 200,
-          nOfComment: 200,
-        },
-      },
-    },
-    {
-      user: {
-        avatar:
-          "https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2022/4/26/photo-1650990843778-1650990844390345942486.jpg",
-        accountName: "Sd_Nguyen",
-        fullname: "Nguyen Van A",
-      },
-      video: {
-        videoId: "askdjf",
-        videoUrl: "https://youtu.be/EngW7tLk6R8",
-        videoDesc:
-          "Xin chao mung cac ban da den voi chuong trinh cua chung toi",
-        hashtags: [
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-          {
-            id: "1",
-            type: "music",
-            hashtag: "#sh350i",
-            link: "https://www.tiktok.com/foryou?lang=en",
-          },
-        ],
-        reaction: {
-          nOfLike: 200,
-          nOfComment: 200,
-        },
-      },
-    },
-  ];
-  const goToViewDetail = (value: string): void => {
-    router.push("/detail_video");
-  };
+  const [dataFilter, setDataFilter] = useState<object>({});
 
+  console.log("dataFilter", dataFilter);
+
+  const listBook = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
   return (
-    <div className="home-container-responsive">
-      {dummyData.map(({user, video}, index) => (
-        <div className="video-container">
-          <ReactPlayer url={video.videoUrl} controls volume={0.5} loop />
+    <div className="home-container-respon">
+      {listBook.map((item, index) => (
+        <div key={index} className="video-main">
+          <Image
+            style={{objectFit: "cover"}}
+            width="100%"
+            height={200}
+            preview={false}
+            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+          />
+          <div className="title-item-video">
+            <Image
+              style={{objectFit: "cover", borderRadius: 50}}
+              width={45}
+              height={45}
+              preview={false}
+              fallback=""
+              src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+            />
+            <div className="detail-item">
+              <span className="title">
+                Trùng căn cước công dân với người đã khuất Trùng căn cước công
+                dân với người đã khuất Trùng căn cước công dân với người đã
+                khuất
+              </span>
+              <div className="detail-item-video">
+                <span>HTV Entertainment</span>
+                <span>- 372k views - </span>
+                <span>6 days ago</span>
+              </div>
+            </div>
+            <div>sss</div>
+          </div>
         </div>
       ))}
     </div>

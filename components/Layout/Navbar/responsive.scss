@@ -1,8 +1,9 @@
 @media only screen and (max-width: 600px) {
   .navbar {
-    width: 1000px;
-    padding: 0px 4% !important;
+    padding: 15px 4% !important;
     background-color: black !important;
+    min-width: 100% !important;
+    position: fixed !important;
 
     .logo {
     }
@@ -10,22 +11,16 @@
       display: block !important;
     }
     .search-navbar {
-
       .input-search-container {
         display: none;
         .input-search {
-
         }
 
         .icon-search-container {
-
-
           .verticalLine {
-
           }
 
           .icon-search {
-
           }
         }
       }
@@ -45,7 +40,6 @@
         .button-search {
           display: none;
           .ant-btn {
-
           }
         }
 
@@ -67,12 +61,8 @@
     }
 
     .action-navbar {
-
       .contact-navbar {
-
-
         .text-contact {
-
         }
 
         .text-contact:hover {
@@ -80,18 +70,14 @@
       }
 
       .author-navbar {
-
         .border-icon-user {
-
         }
         .vertical {
         }
 
         .text-hover:hover {
-
         }
       }
     }
   }
-
 }

@@ -6,11 +6,10 @@
   width: 100%;
   border-radius: 30px;
 
-
-
   .title-login-form {
     color: rgb(22, 24, 35);
-    font-family: "IBM Plex Sans", "SofiaPro", "Arial", "Tahoma", "PingFangSC", "sans-serif";
+    font-family: "IBM Plex Sans", "SofiaPro", "Arial", "Tahoma", "PingFangSC",
+      "sans-serif";
     font-size: 32px;
     margin: 10px auto;
     font-weight: bold;
@@ -73,7 +72,7 @@
 
         .icon-gmail {
           font-size: 29px;
-          color: #E3610B;
+          color: #e3610b;
         }
       }
     }
@@ -96,7 +95,6 @@
       align-items: center;
       margin-top: 15px;
       .noti {
-
       }
 
       .register {
@@ -122,4 +120,3 @@
   max-width: 100% !important;
   border-radius: 12px;
 }
-

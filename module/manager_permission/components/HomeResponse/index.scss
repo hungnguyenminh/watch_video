@@ -1,9 +1,42 @@
-.home-container-responsive {
-  width: 100vw;
-  margin-top: 40px;
-  .video-container {
-    background: #000000;
-    height: 100vh;
-    width: 100vw;
+.home-container-respon {
+  background-color: black !important;
+  width: 100%;
+  padding-top: 66px;
+
+  .video-main {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 10px;
+  }
+
+  .title-item-video {
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+
+    .detail-item {
+      width: 79%;
+
+      .title {
+        color: white;
+        font-size: 17px;
+        overflow: hidden;
+        display: block; /* Fallback for non-webkit */
+        display: -webkit-box;
+        word-wrap: break-word;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        text-overflow: ellipsis;
+        line-height: 22px;
+      }
+
+      .detail-item-video {
+        color: white;
+        font-size: 13px;
+        //margin-top: 3px;
+        color: #aaaaaa;
+      }
+    }
   }
 }
