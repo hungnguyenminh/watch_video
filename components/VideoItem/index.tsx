@@ -8,14 +8,14 @@ import defaultAvatar from "@app/public/img/default_avatar.png";
 import {VideoItemTypes} from "@app/types/VideoItem/VideoItemTypes";
 import "./styles.scss";
 
-function ItemVideo({user, video}: VideoItemTypes) {
+function ItemVideo({user, video, isPlaying}: VideoItemTypes) {
   const [isLike, setIsLike] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
   const router = useRouter();
 
-  const handleAutoPlaying = () => {
-    setIsPlaying(!isPlaying);
-  };
+  console.log("ispakying", isPlaying);
+  // const handleAutoPlaying = () => {
+  //   setIsPlaying(!isPlaying);
+  // };
 
   const handleLikeVideo = () => {
     setIsLike(!isLike);
@@ -62,11 +62,12 @@ function ItemVideo({user, video}: VideoItemTypes) {
             <div className="video-section">
               <div className="video-player">
                 <ReactPlayer
+                  playing={isPlaying}
                   url={video.videoUrl}
                   controls
                   volume={0.5}
                   loop
-                  onReady={handleAutoPlaying}
+                  // onReady={handleAutoPlaying}
                 />
               </div>
               <div className="action-btn-wrapper">
