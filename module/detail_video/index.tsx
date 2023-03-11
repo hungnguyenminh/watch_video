@@ -9,22 +9,31 @@ import {
   CommentOutlined,
   ShareAltOutlined,
   SendOutlined,
+  CloseOutlined,
 } from "@ant-design/icons";
+import {useRouter} from "next/router";
 
 export function DetailVideo(): JSX.Element {
   // const [isLike, setIsLike] = useState(false);
+  const router = useRouter();
+  const handleBack = (): void => {
+    router.back();
+  };
 
   return (
     <div className="detail-video-wrapper">
       <Row className="detail-video-ant-row" wrap>
         <Col lg={{span: 17}} xs={{span: 24}} className="video-big-view">
+          <div className="return-btn" role="button" onClick={handleBack}>
+            <CloseOutlined size={20} style={{color: "white"}} />
+          </div>
           <ReactPlayer
             url="test_video.mp4"
             controls
             volume={0.5}
             loop
             width="100%"
-            height="100%"
+            height="98%"
             style={{
               minWidth: "fit-content",
             }}
@@ -47,7 +56,7 @@ export function DetailVideo(): JSX.Element {
               </div>
               <div className="video-description-container">
                 Xin chao mung cac ban #sh350i sh350i #sh350i #sh350i #sh350i
-                #sh350i
+                #sh350iXin chao mung cac ban #sh350i sh350i #sh350i #sh350i
               </div>
             </div>
             <div className="review-section-body">

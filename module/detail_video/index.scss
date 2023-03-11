@@ -6,8 +6,23 @@
     .video-big-view {
       display: flex;
       background: black;
-      justify-content: center;
-      align-items: center;
+      position: relative;
+      .return-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: rgba(114, 128, 144, 0.3);
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 1;
+        &:hover {
+          background-color: rgba(114, 128, 144, 0.2);
+          cursor: pointer;
+        }
+      }
     }
     .review-section-wrapper {
       box-sizing: border-box;
@@ -15,8 +30,11 @@
       background: white;
 
       .review-section-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
         .video-information-container {
-
           margin-bottom: 15px;
           .user-information-container {
             display: flex;
