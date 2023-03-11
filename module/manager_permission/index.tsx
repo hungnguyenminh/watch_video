@@ -130,7 +130,7 @@ export function VideoView(): JSX.Element {
         videoUrl:
           "https://www.tiktok.com/@datnguyen0701/video/7201549971613617434?is_from_webapp=1&sender_device=pc",
         videoDesc:
-          "Xin chao mung cac bannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+          "Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann  Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann Xin chao mung cac bann",
         hashtags: [
           {
             id: "1",
