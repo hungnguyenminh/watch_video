@@ -8,11 +8,14 @@ import "./responsive.scss";
 import ModalAuthRespon from "@app/components/Layout/Navbar/Components/ModalAuthRespon";
 import {FormLoginGlobal} from "@app/components/FormLoginGlobal";
 import {FormRegisterGlobal} from "@app/components/FormRegisterGlobal";
+import ModalNotification from "@app/components/Layout/Navbar/Components/ModalNotification";
 
 export default function Navbar(): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModal, setIsModal] = useState<string>("login");
   const [isModalAuth, setIsModalAuth] = useState<boolean>(false);
+  const [isModalNotification, setIsModalNotification] =
+    useState<boolean>(false);
 
   const router = useRouter();
   const avatar =
@@ -73,6 +76,9 @@ export default function Navbar(): JSX.Element {
         <div className="group-button">
           <div className="bell-icon">
             <Icon icon="Bell" size={20} />
+            <div className="modal-notificaiton">
+              <ModalNotification />
+            </div>
           </div>
           <div onClick={toSelfBook} className="button-search">
             <Button icon={<PlusOutlined style={{fontSize: 15}} />}>

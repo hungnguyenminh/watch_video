@@ -67,6 +67,15 @@
 
       .bell-icon {
         color: red;
+        padding: 5px;
+
+        .modal-notificaiton {
+          display: none;
+        }
+      }
+
+      .bell-icon:hover .modal-notificaiton {
+        display: block;
       }
 
       .upload-icon {
