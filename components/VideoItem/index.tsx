@@ -67,6 +67,8 @@ function ItemVideo({user, video, isPlaying}: VideoItemTypes) {
                   controls
                   volume={0.5}
                   loop
+                  height={550}
+                  width={350}
                   // onReady={handleAutoPlaying}
                 />
               </div>

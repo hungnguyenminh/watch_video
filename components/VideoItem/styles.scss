@@ -3,6 +3,7 @@
   border-bottom: 1px solid #d2d2d5;
   padding: 0px 0px 20px 0px;
   margin-bottom: 20px;
+  width: 100%;
 
   .user-avatar {
     border-radius: 50px;
@@ -14,6 +15,7 @@
 
   .item-detail {
     margin-left: 13px;
+    width: 75%;
 
     .user-information {
       display: flex;
