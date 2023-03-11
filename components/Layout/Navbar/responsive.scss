@@ -1,9 +1,10 @@
 @media only screen and (max-width: 600px) {
   .navbar {
     padding: 15px 4% !important;
-    background-color: black !important;
+    background-color: transparent !important;
     min-width: 100% !important;
     position: fixed !important;
+    box-shadow: none !important;
 
     .logo {
     }

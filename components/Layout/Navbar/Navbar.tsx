@@ -14,8 +14,6 @@ export default function Navbar(): JSX.Element {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModal, setIsModal] = useState<string>("login");
   const [isModalAuth, setIsModalAuth] = useState<boolean>(false);
-  const [isModalNotification, setIsModalNotification] =
-    useState<boolean>(false);
 
   const router = useRouter();
   const avatar =
