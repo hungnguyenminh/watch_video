@@ -1,49 +1,58 @@
 import "./index.scss";
 import React, {useState} from "react";
-import {useRouter} from "next/router";
-import {Image} from "antd";
+import ReactPlayer from "react-player";
 
 export function HomeResponse(): JSX.Element {
-  const router = useRouter();
-  const [dataFilter, setDataFilter] = useState<object>({});
+  // console.log("dataFilter");
+  // const [isFocus, setIsFocus] = useState<number>(0);
 
-  console.log("dataFilter", dataFilter);
+  // console.log("isFocus", isFocus);
+  const handleTouchStart = (id: number): void => {
+    console.log("onTouchStart");
+    // setIsFocus(id);
+  };
 
-  const listBook = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
+  const handleTouchEnd = (id: number): void => {
+    console.log("onTouchEnd", id);
+    // setIsFocus(id);
+  };
+
+  const listBook = [
+    {id: 0, videoUrl: "https://youtu.be/vMixl6xYfo0"},
+    {id: 1},
+    {id: 2},
+    {id: 3},
+    {id: 4},
+    {id: 5},
+    {id: 6},
+    {id: 7},
+    {id: 8},
+    {id: 9},
+  ];
   return (
     <div className="home-container-respon">
       {listBook.map((item, index) => (
-        <div key={index} className="video-main">
-          <Image
-            style={{objectFit: "cover"}}
-            width="100%"
-            height={200}
-            preview={false}
-            src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        <div
+          // onTouchStart={() => handleTouchStart(item.id)}
+          // onTouchEnd={() => {
+          //   handleTouchEnd(item.id);
+          //   console.log("index", index);
+          // }}
+          key={index}
+          className="video-main"
+        >
+          {JSON.stringify(index)}
+          <ReactPlayer
+            playing
+            // playing={!(isFocus === index)}
+            url="test_video.mp4"
+            controls
+            volume={0.5}
+            loop
+            style={{objectFit: "contain"}}
+            height="100%"
+            // onReady={handleAutoPlaying}
           />
-          <div className="title-item-video">
-            <Image
-              style={{objectFit: "cover", borderRadius: 50}}
-              width={45}
-              height={45}
-              preview={false}
-              fallback=""
-              src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            />
-            <div className="detail-item">
-              <span className="title">
-                Trùng căn cước công dân với người đã khuất Trùng căn cước công
-                dân với người đã khuất Trùng căn cước công dân với người đã
-                khuất
-              </span>
-              <div className="detail-item-video">
-                <span>HTV Entertainment</span>
-                <span>- 372k views - </span>
-                <span>6 days ago</span>
-              </div>
-            </div>
-            <div>sss</div>
-          </div>
         </div>
       ))}
     </div>
