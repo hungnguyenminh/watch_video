@@ -260,10 +260,6 @@ export function VideoView(): JSX.Element {
     setIdFocus(id);
   };
 
-  const onMouseLeave = () => {
-    // setIsPlaying(false);
-  };
-
   return (
     <div className="home-container">
       <div className="home-mobile">
@@ -273,7 +269,6 @@ export function VideoView(): JSX.Element {
         {dummyData.map(({id, user, video}, index) => (
           <div
             onMouseEnter={() => onMouseEnter(id)}
-            onMouseLeave={() => onMouseLeave()}
             key={user.accountName + video.videoId}
           >
             <VideoItem
